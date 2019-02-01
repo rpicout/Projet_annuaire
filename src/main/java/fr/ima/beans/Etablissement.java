@@ -1,5 +1,7 @@
 package fr.ima.beans;
 
+import java.util.Date;
+
 public class Etablissement {
 	
 	private String Identifiant_de_l_etablissement;
@@ -15,33 +17,33 @@ public class Etablissement {
 	private int Code_departement;
 	private int Code_academie;
 	private int Code_region;
-	private boolean Ecole_maternelle;
-	private boolean Ecole_elementaire;
-	private boolean Voie_generale;
-	private boolean Voie_technologique;
-	private boolean Voie_professionnelle;
-	private int Telephone;
-	private int Fax;
+	private int Ecole_maternelle; 
+	private int Ecole_elementaire;
+	private int Voie_generale;
+	private int Voie_technologique;
+	private int Voie_professionnelle;
+	private String Telephone;
+	private String Fax;
 	private String Web;
 	private String Mail;
-	private boolean Restauration;
-	private boolean Hebergement;
+	private int Restauration;
+	private int Hebergement;
 	private int ULIS;
-	private String Apprentissage; //TODO c'est peut etre un boolean	
-	private String Segpa; //TODO c'est peut etre un boolean	
-	private String Section_arts; //TODO c'est peut etre un boolean	
-	private String Section_cinema; //TODO c'est peut etre un boolean	
-	private String Section_theatre; //TODO c'est peut etre un boolean	
-	private String Section_sport; //TODO c'est peut etre un boolean	
-	private String Section_internationale;//TODO c'est peut etre un boolean
-	private String Section_europeenne;//TODO c'est peut etre un boolean
-	private String Lycee_Agricole;//TODO c'est peut etre un boolean
-	private String Lycee_militaire;//TODO c'est peut etre un boolean
-	private String Lycee_des_metiers;//TODO c'est peut etre un boolean
-	private String Post_BAC; //TODO c'est peut etre un boolean
-	private String Appartenance_Education_Prioritaire;//TODO c'est peut etre un boolean
-	private String GRETA;//TODO c'est peut etre un autre Type
-	private int SIREN_SIRET;
+	private int Apprentissage; 
+	private int Segpa; 
+	private int Section_arts; 
+	private int Section_cinema;	
+	private int Section_theatre;
+	private int Section_sport; 	
+	private int Section_internationale;
+	private int Section_europeenne;
+	private int Lycee_Agricole;
+	private int Lycee_militaire;
+	private int Lycee_des_metiers;
+	private int Post_BAC; 
+	private String Appartenance_Education_Prioritaire;
+	private int GRETA;//TODO c'est peut etre un autre Type
+	private String SIREN_SIRET;
 	private int Nombre_d_eleves;
 	private String Fiche_onisep;
 	private String Type_contrat_prive;
@@ -55,14 +57,14 @@ public class Etablissement {
 	private String latitude;
 	private String longitude;
 	private String precision_localisation;
-	private String date_ouverture;
-	private String date_maj_ligne; //TODO Type date ???
+	private Date date_ouverture;
+	private Date date_maj_ligne; 
 	private String etat;
 	private String ministere_tutelle;
-	private String etablissement_multi_lignes;
-	private String rpi_concentre; //TODO type int ??
-	private String rpi_disperse; //TODO type int ??
-	private String code_nature;
+	private int etablissement_multi_lignes;
+	private int rpi_concentre; 
+	private String rpi_disperse; 
+	private int code_nature;
 	private String libelle_nature;
 	
 	
@@ -157,52 +159,52 @@ public class Etablissement {
 		Code_region = code_region;
 	}
 	
-	public boolean isEcole_maternelle() {
+	public int getEcole_maternelle() {
 		return Ecole_maternelle;
 	}
-	public void setEcole_maternelle(boolean ecole_maternelle) {
+	public void setEcole_maternelle(int ecole_maternelle) {
 		Ecole_maternelle = ecole_maternelle;
 	}
 	
-	public boolean isEcole_elementaire() {
+	public int getEcole_elementaire() {
 		return Ecole_elementaire;
 	}
-	public void setEcole_elementaire(boolean ecole_elementaire) {
+	public void setEcole_elementaire(int ecole_elementaire) {
 		Ecole_elementaire = ecole_elementaire;
 	}
 	
-	public boolean isVoie_generale() {
+	public int getVoie_generale() {
 		return Voie_generale;
 	}
-	public void setVoie_generale(boolean voie_generale) {
+	public void setVoie_generale(int voie_generale) {
 		Voie_generale = voie_generale;
 	}
 	
-	public boolean isVoie_technologique() {
+	public int getVoie_technologique() {
 		return Voie_technologique;
 	}
-	public void setVoie_technologique(boolean voie_technologique) {
+	public void setVoie_technologique(int voie_technologique) {
 		Voie_technologique = voie_technologique;
 	}
 	
-	public boolean isVoie_professionnelle() {
+	public int getVoie_professionnelle() {
 		return Voie_professionnelle;
 	}
-	public void setVoie_professionnelle(boolean voie_professionnelle) {
+	public void setVoie_professionnelle(int voie_professionnelle) {
 		Voie_professionnelle = voie_professionnelle;
 	}
 	
-	public int getTelephone() {
+	public String getTelephone() {
 		return Telephone;
 	}
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		Telephone = telephone;
 	}
 	
-	public int getFax() {
+	public String getFax() {
 		return Fax;
 	}
-	public void setFax(int fax) {
+	public void setFax(String fax) {
 		Fax = fax;
 	}
 	
@@ -220,17 +222,17 @@ public class Etablissement {
 		Mail = mail;
 	}
 	
-	public boolean isRestauration() {
+	public int getRestauration() {
 		return Restauration;
 	}
-	public void setRestauration(boolean restauration) {
+	public void setRestauration(int restauration) {
 		Restauration = restauration;
 	}
 	
-	public boolean isHebergement() {
+	public int getHebergement() {
 		return Hebergement;
 	}
-	public void setHebergement(boolean hebergement) {
+	public void setHebergement(int hebergement) {
 		Hebergement = hebergement;
 	}
 	
@@ -241,87 +243,87 @@ public class Etablissement {
 		ULIS = uLIS;
 	}
 	
-	public String getApprentissage() {
+	public int getApprentissage() {
 		return Apprentissage;
 	}
-	public void setApprentissage(String apprentissage) {
+	public void setApprentissage(int apprentissage) {
 		Apprentissage = apprentissage;
 	}
 	
-	public String getSegpa() {
+	public int getSegpa() {
 		return Segpa;
 	}
-	public void setSegpa(String segpa) {
+	public void setSegpa(int segpa) {
 		Segpa = segpa;
 	}
 	
-	public String getSection_arts() {
+	public int getSection_arts() {
 		return Section_arts;
 	}
-	public void setSection_arts(String section_arts) {
+	public void setSection_arts(int section_arts) {
 		Section_arts = section_arts;
 	}
 	
-	public String getSection_cinema() {
+	public int getSection_cinema() {
 		return Section_cinema;
 	}
-	public void setSection_cinema(String section_cinema) {
+	public void setSection_cinema(int section_cinema) {
 		Section_cinema = section_cinema;
 	}
 	
-	public String getSection_theatre() {
+	public int getSection_theatre() {
 		return Section_theatre;
 	}
-	public void setSection_theatre(String section_theatre) {
+	public void setSection_theatre(int section_theatre) {
 		Section_theatre = section_theatre;
 	}
 	
-	public String getSection_sport() {
+	public int getSection_sport() {
 		return Section_sport;
 	}
-	public void setSection_sport(String section_sport) {
+	public void setSection_sport(int section_sport) {
 		Section_sport = section_sport;
 	}
 	
-	public String getSection_internationale() {
+	public int getSection_internationale() {
 		return Section_internationale;
 	}
-	public void setSection_internationale(String section_internationale) {
+	public void setSection_internationale(int section_internationale) {
 		Section_internationale = section_internationale;
 	}
 	
-	public String getSection_europeenne() {
+	public int getSection_europeenne() {
 		return Section_europeenne;
 	}
-	public void setSection_europeenne(String section_europeenne) {
+	public void setSection_europeenne(int section_europeenne) {
 		Section_europeenne = section_europeenne;
 	}
 	
-	public String getLycee_Agricole() {
+	public int getLycee_Agricole() {
 		return Lycee_Agricole;
 	}
-	public void setLycee_Agricole(String lycee_Agricole) {
+	public void setLycee_Agricole(int lycee_Agricole) {
 		Lycee_Agricole = lycee_Agricole;
 	}
 	
-	public String getLycee_militaire() {
+	public int getLycee_militaire() {
 		return Lycee_militaire;
 	}
-	public void setLycee_militaire(String lycee_militaire) {
+	public void setLycee_militaire(int lycee_militaire) {
 		Lycee_militaire = lycee_militaire;
 	}
 	
-	public String getLycee_des_metiers() {
+	public int getLycee_des_metiers() {
 		return Lycee_des_metiers;
 	}
-	public void setLycee_des_metiers(String lycee_des_metiers) {
+	public void setLycee_des_metiers(int lycee_des_metiers) {
 		Lycee_des_metiers = lycee_des_metiers;
 	}
 	
-	public String getPost_BAC() {
+	public int getPost_BAC() {
 		return Post_BAC;
 	}
-	public void setPost_BAC(String post_BAC) {
+	public void setPost_BAC(int post_BAC) {
 		Post_BAC = post_BAC;
 	}
 	
@@ -332,17 +334,17 @@ public class Etablissement {
 		Appartenance_Education_Prioritaire = appartenance_Education_Prioritaire;
 	}
 	
-	public String getGRETA() {
+	public int getGRETA() {
 		return GRETA;
 	}
-	public void setGRETA(String gRETA) {
+	public void setGRETA(int gRETA) {
 		GRETA = gRETA;
 	}
 	
-	public int getSIREN_SIRET() {
+	public String getSIREN_SIRET() {
 		return SIREN_SIRET;
 	}
-	public void setSIREN_SIRET(int sIREN_SIRET) {
+	public void setSIREN_SIRET(String sIREN_SIRET) {
 		SIREN_SIRET = sIREN_SIRET;
 	}
 	
@@ -437,17 +439,17 @@ public class Etablissement {
 		this.precision_localisation = precision_localisation;
 	}
 	
-	public String getDate_ouverture() {
+	public Date getDate_ouverture() {
 		return date_ouverture;
 	}
-	public void setDate_ouverture(String date_ouverture) {
+	public void setDate_ouverture(Date date_ouverture) {
 		this.date_ouverture = date_ouverture;
 	}
 	
-	public String getDate_maj_ligne() {
+	public Date getDate_maj_ligne() {
 		return date_maj_ligne;
 	}
-	public void setDate_maj_ligne(String date_maj_ligne) {
+	public void setDate_maj_ligne(Date date_maj_ligne) {
 		this.date_maj_ligne = date_maj_ligne;
 	}
 	
@@ -465,17 +467,17 @@ public class Etablissement {
 		this.ministere_tutelle = ministere_tutelle;
 	}
 	
-	public String getEtablissement_multi_lignes() {
+	public int getEtablissement_multi_lignes() {
 		return etablissement_multi_lignes;
 	}
-	public void setEtablissement_multi_lignes(String etablissement_multi_lignes) {
+	public void setEtablissement_multi_lignes(int etablissement_multi_lignes) {
 		this.etablissement_multi_lignes = etablissement_multi_lignes;
 	}
 	
-	public String getRpi_concentre() {
+	public int getRpi_concentre() {
 		return rpi_concentre;
 	}
-	public void setRpi_concentre(String rpi_concentre) {
+	public void setRpi_concentre(int rpi_concentre) {
 		this.rpi_concentre = rpi_concentre;
 	}
 	
@@ -486,10 +488,10 @@ public class Etablissement {
 		this.rpi_disperse = rpi_disperse;
 	}
 	
-	public String getCode_nature() {
+	public int getCode_nature() {
 		return code_nature;
 	}
-	public void setCode_nature(String code_nature) {
+	public void setCode_nature(int code_nature) {
 		this.code_nature = code_nature;
 	}
 	
@@ -499,5 +501,4 @@ public class Etablissement {
 	public void setLibelle_nature(String libelle_nature) {
 		this.libelle_nature = libelle_nature;
 	}
-
 }
