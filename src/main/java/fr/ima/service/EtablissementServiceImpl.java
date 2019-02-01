@@ -9,8 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import fr.ima.beans.Etablissement;
 
 
-
-@Service // D�clare la classe comme une classe de service 
+@Service // Déclare la classe comme une classe de service 
 public class EtablissementServiceImpl implements EtablissementService {
 
 	@Autowired
@@ -20,12 +19,10 @@ public class EtablissementServiceImpl implements EtablissementService {
 	public List<Etablissement> lister() {
 
 		// Construction de l'URL pour l'appel su WS
-		String url = "http://localhost:8090/students";
+		String url = "http://localhost:8090/etablissements";
 
 		// Appel du WS Rest
-		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, 
-				List.class, 
-				url);
+		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class, url);
 		
 		return etablissement;
 	}
