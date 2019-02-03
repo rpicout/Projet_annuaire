@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	
+</head>
+<body>
+	<div class="container">
+		<h2>Liste des établissements</h2>
+		<div class="table-responsive">
+		<table class="table table-dark table-hover">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Type</th>
+					<th>Statut</th>
+					<th>Adresse</th>
+					<th>Code postal</th>
+					<th>Ville</th>
+					<th>Département</th>
+					<th>Région</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="etalissement: ${annuaire}">
+					<th th:text="${etablissement.Nom_etablissement}">Oranges</th>
+					<th th:text="${etablissement.Type_etablissement}">Bananes</th>
+					<th th:text="${etablissement.Statut_public_prive}">Pommes</th>
+					<th th:text="${etablissement.Adresse_1}">Oranges</th>
+					<th th:text="${etablissement.Code_postal}">Bananes</th>
+					<th th:text="${etablissement.Libelle_academie}">Pommes</th>
+					<th th:text="${etablissement.Libelle_departement}">Bananes</th>
+					<th th:text="${etablissement.Libelle_region}">Pommes</th>
+				</tr>
+			</tbody>
+		</table>	
+		</div>
+	</div>
+</body>
+</html>
