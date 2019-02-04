@@ -1,123 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Theme Company</title>
+  <title>Annuaire des établissements</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-	body{
-		font: 400 15px/1.8 Lato, sans-serif;
-		color: #777;
-	}
-	.projet p {
-		margin: 50px 0 30px 0;
-	}
-	.projet h2, h3{
-		color: #636369;
-	}
-	.jumbotron { 
-	  font-family: Montserrat, sans-serif;
-	  background-color: #2d2d30; /* Orange */
-	  color: #ffffff;
-	}
-	
-	.jumbotron h1 {
-		font-family: Montserrat, sans-serif;
-		color: #f2f2f3;
-		margin: 30px 0 20px 0;
-    	letter-spacing: 5px;    
-	}
-	
-	.jumbotron a {
-		font-family: Montserrat, sans-serif;
-		color: #f2f2f3;
-	}
-	
-	.navbar {
-	    font-family: Montserrat, sans-serif;
-	    margin-bottom: 0;
-	    background-color: #2d2d30;
-	    z-index: 9999;
-	    border: 0;
-	    font-size: 11px !important;
-	    letter-spacing: 4px;
-	    opacity: 0.9;
-	    border-radius: 0;
-  	}
-	
-	.navbar li a, .navbar .navbar-brand {
-		color: #d5d5d5 !important;
-	}
-	
-	.navbar-nav li a:hover {
-	  color: #fff !important;
-	}
-	.navbar-nav li.active a {
-	  color: #fff !important;
-	  background-color: #29292c !important;
-	}
-	.navbar-default .navbar-toggle {
-	  border-color: transparent;
-	}
-	
-	.bg-1 {
-	  background: #2d2d30;
-	  color: #bdbdbd;
-	}
-	.bg-1 h2 {
-		color: #fff;
-		margin: 30px 0 20px 0;
-    	letter-spacing: 7px;      
-    	font-size: 20px;
-	}
-	.bg-1 p {font-style: italic;}
-	
-	.panel {
-	  border: 1px solid #fff; 
-	  border-radius:0;
-	  transition: box-shadow 0.5s;
-	}
-	
-	.panel:hover {
-	  box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-	}
-	
-	.panel-heading {
-	  color: #2d2d30 !important;
-	  background-color: #fff !important;
-	  padding: 25px;
-	  border-bottom: 1px solid transparent;
-	  border-top-left-radius: 0px;
-	  border-top-right-radius: 0px;
-	  border-bottom-left-radius: 0px;
-	  border-bottom-right-radius: 0px;
-	}
-	.panel-footer {
-	  background-color: #2d2d30 !important;
-	}
-	.panel-footer h4 {
-	  font-size: 32px;
-	}
-	.panel-footer h4 {
-	  color: #aaa;
-	  font-size: 14px;
-	}
-	.panel-initiales-1 {
-	  background-color: #2d2d30 !important;
-	  padding: 3px;
-	  border-radius: 50%;
-	}
-	.panel-initiales-2 {
-	  background-color: #fff !important;
-	  padding: 25px;
-	  border-radius: 50%;     
-      font-size: 30px;
-	}
-	
-	</style>
+  <link rel="stylesheet" href="css/style.css" type="text/css" >
 </head>
 <body id="Page" data-spy="scroll" data-target=".navbar" data-offset="50">
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -164,43 +54,25 @@
 	    <p/>
 	</div>
 	
-	<div class="container-fluid bg-1">
-	  <div class="text-center">
+	<div class="container-fluid text-center bg-1">
 	    <h2>REALISATION DU PROJET</h2>
 	    <p>Ce projet a été réalisé en binôme par<p>
-	  </div>
-	  	<div class="col-sm-3"></div>
-	    <div class="col-sm-3 col-xs-12">
-	      <div class="panel panel-default text-center">
-	        <div class="panel-heading">
-	        	<div class="panel-initiales-1">
-	        	<div class="panel-initiales-2">
-	          		<h1>ALB</h1>
-	          	</div>
-	          	</div>
-	        </div>
-	        <div class="panel-footer">
+	    <div class="col-sm-3"></div>
+	    <div class="col-sm-3">
+	      <img src="images/ALB.png" class="img-circle" width="120" height="120">
+	      <div class="initiales"> <!-- Ne marche pas -->
 	          <h3>Anne-Laure<br>BOISSEAU</br></h3>
 	          <h4>a.boisseau@etud.uco.fr</h4>
-	        </div>
-	      </div>      
-	    </div>     
-	    <div class="col-sm-3 col-xs-12">
-	      <div class="panel panel-default text-center">
-	        <div class="panel-heading">
-	          	<div class="panel-initiales-1">
-	        	<div class="panel-initiales-2">
-	          		<h1>RP</h1>
-	          	</div>
-	          	</div>
-	        </div>
-	        <div class="panel-footer">
+          </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <img src="images/RP.png" class="img-circle" width="120" height="120">
+	      <div class="initiales"> <!-- Ne marche pas -->
 	          <h3>Romane<br>PICOUT</br></h3>
 	          <h4>romane.picout@etud.uco.fr</h4>
-	        </div>
-	      </div>      
+          </div>
 	    </div>
-	  	<div class="col-sm-3"></div>    
+	  	<div class="col-sm-3"></div>  
 	</div>
 </body>
 </html>
