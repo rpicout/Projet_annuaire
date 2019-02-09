@@ -8,18 +8,17 @@ import org.springframework.web.client.RestTemplate;
 
 import fr.ima.beans.Etablissement;
 
-
 @Service // Déclare la classe comme une classe de service 
 public class EtablissementServiceImpl implements EtablissementService {
 
 	@Autowired
-	private RestTemplate restTemplate;
+	public RestTemplate restTemplate;
 	
 	@Override
 	public List<Etablissement> lister() {
 
 		// Construction de l'URL pour l'appel su WS
-		String url = "http://localhost:8090/etablissements";
+		String url = "http://localhost:8081/etablissements";
 
 		// Appel du WS Rest
 		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class, url);

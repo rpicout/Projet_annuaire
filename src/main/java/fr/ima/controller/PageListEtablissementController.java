@@ -14,8 +14,8 @@ public class PageListEtablissementController {
 	private EtablissementService dao;
 
     @GetMapping("/listeDesEtablissements")
-    public String afficherListeDesEtablissements(Model model) {
-        model.addAttribute("etablissements", dao.lister());
+    public String AfficherListeDesEtablissements(Model model) {
+    	model.addAttribute("etablissements", dao.lister());
         return "listeDesEtablissements";
     }
 
