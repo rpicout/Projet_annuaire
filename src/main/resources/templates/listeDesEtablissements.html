@@ -50,6 +50,7 @@
 		<table id="tableauEtablissement" class="table table-hover table-bordered" width="100%">
 			<thead >
 				<tr>
+					<th>ID</th>
 					<th>NOM</th>
 					<th>TYPE</th>
 					<th>STATUT</th>
@@ -62,14 +63,15 @@
 			</thead>
 			<tbody id="ligne-tableau">
 				<tr th:each="etablissement: ${etablissements}">
-					<th th:text="${etablissement.nom_etablissement}">Oranges</th>
-					<th th:text="${etablissement.type_etablissement}">Bananes</th>
-					<th th:text="${etablissement.statut_public_prive}">Pommes</th>
-					<th th:text="${etablissement.adresse_1}">Oranges</th>
-					<th th:text="${etablissement.code_postal}">Bananes</th>
-					<th th:text="${etablissement.libelle_academie}">Pommes</th>
-					<th th:text="${etablissement.libelle_departement}">Bananes</th>
-					<th th:text="${etablissement.libelle_region}">Pommes</th>
+					<th th:text="${etablissement.identifiant_de_l_etablissement}">id</th>
+					<th th:text="${etablissement.nom_etablissement}">nom</th>
+					<th th:text="${etablissement.type_etablissement}">type</th>
+					<th th:text="${etablissement.statut_public_prive}">statyt</th>
+					<th th:text="${etablissement.adresse_1}">adresse</th>
+					<th th:text="${etablissement.code_postal}">code postal</th>
+					<th th:text="${etablissement.libelle_academie}">académie</th>
+					<th th:text="${etablissement.libelle_departement}">département</th>
+					<th th:text="${etablissement.libelle_region}">région</th>
 				</tr>
 			</tbody>
 		</table>	
