@@ -1,45 +1,78 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head> 
-    <title>Annuaire des établissements - liste</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	
+  	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="listeJS.js"></script>
 	
+  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
 </head>
 <body>
-	<div class="container">
-		<h2>Liste des établissements</h2>
-		<div class="table-responsive">
-		<table class="table table-striped" >
-			<thead>
-				<tr>
-					<th>Nom</th>
-					<th>Type</th>
-					<th>Statut</th>
-					<th>Adresse</th>
-					<th>Code postal</th>
-					<th>Ville</th>
-					<th>Département</th>
-					<th>Région</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="etablissement: ${etablissements}">
-					<th th:text="${etablissement.nom_etablissement}">Oranges</th>
-					<th th:text="${etablissement.type_etablissement}">Bananes</th>
-					<th th:text="${etablissement.statut_public_prive}">Pommes</th>
-					<th th:text="${etablissement.adresse_1}">Oranges</th>
-					<th th:text="${etablissement.code_postal}">Bananes</th>
-					<th th:text="${etablissement.libelle_academie}">Pommes</th>
-					<th th:text="${etablissement.libelle_departement}">Bananes</th>
-					<th th:text="${etablissement.libelle_region}">Pommes</th>
-				</tr>
-			</tbody>
-		</table>	
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <!-- 
+		  <a class="navbar-brand" href="#myPage">Logo</a>
+		   -->
 		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="/">HOME</a></li>
+			<li><a href="/#projet">A PROPOS</a></li>
+			<li><a href="/listeDesEtablissements">LISTE DES ETABLISSEMENTS</a></li>
+			<li><a href="#">LIEN</a></li>
+			<li><a href="#">LIEN</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+	<div class="jumbotron">
+		<h2>Liste des établissements</h2>
+	</div>
+	
+	<div class="table-responsive">
+	<table id="tableauEtablissement" class="table table-striped table-bordered" cellspacing="0" width="100%">
+		<thead class="thead-dark">
+			<tr>
+				<th>Nom</th>
+				<th>Type</th>
+				<th>Statut</th>
+				<th>Adresse</th>
+				<th>Code postal</th>
+				<th>Ville</th>
+				<th>Département</th>
+				<th>Région</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="etablissement: ${etablissements}">
+				<th th:text="${etablissement.nom_etablissement}">Oranges</th>
+				<th th:text="${etablissement.type_etablissement}">Bananes</th>
+				<th th:text="${etablissement.statut_public_prive}">Pommes</th>
+				<th th:text="${etablissement.adresse_1}">Oranges</th>
+				<th th:text="${etablissement.code_postal}">Bananes</th>
+				<th th:text="${etablissement.libelle_academie}">Pommes</th>
+				<th th:text="${etablissement.libelle_departement}">Bananes</th>
+				<th th:text="${etablissement.libelle_region}">Pommes</th>
+			</tr>
+		</tbody>
+	</table>	
 	</div>
 </body>
 </html>

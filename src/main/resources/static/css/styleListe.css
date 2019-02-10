@@ -1,0 +1,45 @@
+body{
+	font-family: Montserrat, Lato, sans-serif;
+	color: #777;
+	margin: 0;
+}
+
+.jumbotron { 
+	font-family: Montserrat, sans-serif;
+	background-color: #2d2d30; 
+}
+.jumbotron h2 {
+	font-size: 35px;
+	color: #f2f2f3;
+	margin-left: 20px;
+}
+
+.navbar {
+	font-family: Montserrat, sans-serif;
+	margin-bottom: 0;
+	background-color: #2d2d30;
+	z-index: 9999;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.9;
+	border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+}
+.navbar-nav li a:hover {
+	color: #fff !important;
+}
+.navbar-nav li.active a {
+	color: #fff !important;
+	background-color: #29292c !important;
+}
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+}
+
+.entete-tableau th {
+	background-color: #2C3034;
+	color: #fff;
+}
