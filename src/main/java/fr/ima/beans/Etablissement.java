@@ -55,8 +55,8 @@ public class Etablissement {
 	private String latitude;
 	private String longitude;
 	private String precision_localisation;
-	private String String_ouverture;
-	private String String_maj_ligne; 
+	private String date_ouverture;
+	private String date_maj_ligne; 
 	private String etat;
 	private String ministere_tutelle;
 	private String etablissement_multi_lignes;
@@ -437,18 +437,18 @@ public class Etablissement {
 		this.precision_localisation = precision_localisation;
 	}
 	
-	public String getString_ouverture() {
-		return String_ouverture;
+	public String getdate_ouverture() {
+		return date_ouverture;
 	}
-	public void setString_ouverture(String String_ouverture) {
-		this.String_ouverture = String_ouverture;
+	public void setDate_ouverture(String date_ouverture) {
+		this.date_ouverture = date_ouverture;
 	}
 	
-	public String getString_maj_ligne() {
-		return String_maj_ligne;
+	public String getdate_maj_ligne() {
+		return date_maj_ligne;
 	}
-	public void setString_maj_ligne(String String_maj_ligne) {
-		this.String_maj_ligne = String_maj_ligne;
+	public void setDate_maj_ligne(String date_maj_ligne) {
+		this.date_maj_ligne = date_maj_ligne;
 	}
 	
 	public String getEtat() {
