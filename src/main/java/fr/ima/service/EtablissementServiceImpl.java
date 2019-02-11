@@ -1,6 +1,7 @@
 package fr.ima.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,19 @@ public class EtablissementServiceImpl implements EtablissementService {
 		
 		return etablissement;
 	}
+	
+	@Override
+	public List<Etablissement> findByCodePostal(String code_postal) {
+		// Construction de l'URL pour l'appel su WS
+		String url = "http://localhost:8081/etablissements";
+
+		// Appel du WS Rest
+		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class,url);
+				
+				
+		return etablissement;
+	}
+	
+	
 
 }
