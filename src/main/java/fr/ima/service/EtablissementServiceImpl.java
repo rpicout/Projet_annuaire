@@ -1,7 +1,6 @@
 package fr.ima.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 import fr.ima.beans.Etablissement;
 
-@Service // Déclare la classe comme une classe de service 
+@Service
 public class EtablissementServiceImpl implements EtablissementService {
 
 	@Autowired
@@ -35,10 +34,7 @@ public class EtablissementServiceImpl implements EtablissementService {
 		// Appel du WS Rest
 		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class,url);
 				
-				
 		return etablissement;
 	}
-	
-	
 
 }
