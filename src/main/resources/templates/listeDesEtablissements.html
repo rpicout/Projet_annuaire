@@ -10,11 +10,12 @@
   	
   	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
-
-  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
+	
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<script type="text/javascript" src="listeJS.js"></script>
+
+  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
 	
 </head>
 <body>
@@ -61,8 +62,9 @@
 					<th>REGION</th>
 				</tr>
 			</thead>
+			
 			<tbody id="ligne-tableau">
-				<tr th:each="etablissement: ${etablissements}">
+				<tr th:each="etablissement: ${etablissements}" onclick="collapseRow()">
 					<th th:text="${etablissement.identifiant_de_l_etablissement}">id</th>
 					<th th:text="${etablissement.nom_etablissement}">nom</th>
 					<th th:text="${etablissement.type_etablissement}">type</th>
@@ -72,9 +74,22 @@
 					<th th:text="${etablissement.libelle_academie}">académie</th>
 					<th th:text="${etablissement.libelle_departement}">département</th>
 					<th th:text="${etablissement.libelle_region}">région</th>
-				</tr>
+					<tr id="collapseRow">
+						<th th:text="${etablissement.identifiant_de_l_etablissement}">id</th>
+						<th th:text="${etablissement.nom_etablissement}">nom</th>
+						<th th:text="${etablissement.type_etablissement}">type</th>
+						<th th:text="${etablissement.statut_public_prive}">statyt</th>
+						<th th:text="${etablissement.adresse_1}">adresse</th>
+						<th th:text="${etablissement.code_postal}">code postal</th>
+						<th th:text="${etablissement.libelle_academie}">académie</th>
+						<th th:text="${etablissement.libelle_departement}">département</th>
+						<th th:text="${etablissement.libelle_region}">région</th>
+					</tr>
+					
+				</tr> 
 			</tbody>
 		</table>	
 	</div>
+	
 </body>
 </html>
