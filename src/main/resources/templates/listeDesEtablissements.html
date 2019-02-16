@@ -36,7 +36,7 @@
 			<li><a href="/">HOME</a></li>
 			<li><a href="/#projet">A PROPOS</a></li>
 			<li><a href="/listeDesEtablissements">LISTE DES ETABLISSEMENTS</a></li>
-			<li><a href="#">LIEN</a></li>
+			<li><a href="/rechercheCodePostal">RECHERCHE PAR CODE POSTAL</a></li>
 			<li><a href="#">LIEN</a></li>
 		  </ul>
 		</div>
@@ -46,6 +46,7 @@
 	<div class="jumbotron">
 		<h2>Liste des établissements</h2>
 	</div>
+	
 	
 	<div class="table-responsive" id="tableau">
 		<table id="tableauEtablissement" class="table table-hover table-bordered" width="100%">
@@ -68,7 +69,7 @@
 					<th th:text="${etablissement.identifiant_de_l_etablissement}">id</th>
 					<th th:text="${etablissement.nom_etablissement}">nom</th>
 					<th th:text="${etablissement.type_etablissement}">type</th>
-					<th th:text="${etablissement.statut_public_prive}">statyt</th>
+					<th th:text="${etablissement.statut_public_prive}">statut</th>
 					<th th:text="${etablissement.adresse_1}">adresse</th>
 					<th th:text="${etablissement.code_postal}">code postal</th>
 					<th th:text="${etablissement.libelle_academie}">académie</th>
@@ -91,5 +92,28 @@
 		</table>	
 	</div>
 	
+<<<<<<< HEAD
+=======
+	<div class="jumbotron">
+		<h2>Recherche par Code Postal</h2>
+	</div>
+	
+	<div class="table-responsive" id="tableau">
+		<table id="tableauCodePostal" class="table table-hover table-bordered" width="100%">
+			<thead >
+				<tr>
+					<th>CODE POSTAL</th>
+					
+				</tr>
+			</thead>
+			<tbody id="ligne-tableau">
+				<tr th:each="etablissement: ${etablissements}">
+					<th th:text="${etablissement.code_postal}">code postal</th>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+	
+>>>>>>> 595a605bbddd43870034fd251e50f48cb5f6c1f2
 </body>
 </html>
