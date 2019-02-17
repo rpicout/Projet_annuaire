@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head> 
-	<title>Annuaire des établissements - Liste</title>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="">
+<head>
+	<title>Annuaire des établissements - Recherche par code postal</title>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway:200" rel="stylesheet"/>
@@ -12,11 +12,7 @@
   	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
-  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-	<script type="text/javascript" src="listeJS.js"></script>
-</head>
+  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" ></head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
@@ -43,11 +39,16 @@
 	</nav>
 	
 	<div class="jumbotron">
-		<h2>Liste des établissements</h2>
+		<h2>Recherche par Code Postal</h2>
+	</div>
+	
+	<div ng-controller="Ctrl">
+		<input type="text" placeholder="Code postal" ng-model="codePostal">
+		<span nd-model="codePostal"></span>
 	</div>
 	
 	<div class="table-responsive" id="tableau">
-		<table id="tableauEtablissement" class="table table-hover table-bordered" width="100%">
+		<table id="tableauCodePostal" class="table table-hover table-bordered" width="100%">
 			<thead >
 				<tr>
 					<th>ID</th>
