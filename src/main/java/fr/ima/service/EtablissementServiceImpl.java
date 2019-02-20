@@ -21,9 +21,9 @@ public class EtablissementServiceImpl implements EtablissementService {
 		String url = "http://localhost:8081/etablissements";
 
 		// Appel du WS Rest
-		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class, url);
+		List<Etablissement> etablissements = (List<Etablissement>) restTemplate.getForObject(url, List.class, url);
 		
-		return etablissement;
+		return etablissements;
 	}
 	
 	@Override
@@ -32,9 +32,20 @@ public class EtablissementServiceImpl implements EtablissementService {
 		String url = "http://localhost:8081/etablissements/"+codepostal;
 
 		// Appel du WS Rest
-		List<Etablissement> etablissement = (List<Etablissement>) restTemplate.getForObject(url, List.class,url);
+		List<Etablissement> etablissements = (List<Etablissement>) restTemplate.getForObject(url, List.class, url);
 				
+		return etablissements;
+	}
+
+	@Override
+	public Etablissement findByID(String id) {
+		String url = "http://localhost:8081/etablissement/"+id;
+		
+		Etablissement etablissement = (Etablissement)restTemplate.getForObject(url,  List.class, url);
+		
 		return etablissement;
 	}
+	
+	
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-	<title>Annuaire des établissements - Recherche par code postal</title>
+	<title>Annuaire des établissements - Modifier établissement</title>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway:200" rel="stylesheet"/>
@@ -44,13 +44,15 @@
 	</nav>
 	
 	<div class="jumbotron">
-		<h2>Recherche par Code Postal</h2>
+		<h2>Modifier la fiche d'un établissement</h2>
 	</div>
 	
 	<div>
-		<input type="text" placeholder="Code postal" id="codePostal">
-		<img src="images/search.png" onclick="reloadUrlSearch()">
+		<input type="text" placeholder="Identifiant de l'établissement" id="id">
+		<img src="images/search.png" onclick="reloadUrlMAJ()">
 	</div>
+	
+	
 	
 	<div class="table-responsive" id="tableau">
 		<table id="tableauCodePostal" class="table table-hover table-bordered" width="100%">

@@ -26,4 +26,9 @@ public class PageListEtablissementController {
         return "rechercheCodePostal";
     }
 
+    @GetMapping("/modifierEtablissement{id}")
+    public String AfficherParID(Model model, @PathVariable String id) {
+    	model.addAttribute("etablissements", dao.findByID(id));
+        return "modifierEtablissement";
+    }
 }

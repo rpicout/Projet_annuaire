@@ -12,8 +12,12 @@ $(document).ready(function() {
     } );
 });
 
-var reloadUrl = function() {
+var reloadUrlSearch = function() {
 	var cp = document.getElementById("codePostal").value; 
-	console.log(cp);
 	window.location.href = "http://localhost:8080/rechercheCodePostal"+cp;
+};
+
+var reloadUrlMAJ = function() {
+	var id = document.getElementById("id").value; 
+	window.location.href = "http://localhost:8080/modifierEtablissement"+id;
 };
