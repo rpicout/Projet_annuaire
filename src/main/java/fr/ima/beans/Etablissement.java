@@ -33,7 +33,7 @@ public class Etablissement {
 	private String sectioncinema;	
 	private String sectiontheatre;
 	private String sectionsport; 	
-	private String sectionStringernationale;
+	private String sectioninternationale;
 	private String sectioneuropeenne;
 	private String lyceeAgricole;
 	private String lyceemilitaire;
@@ -284,10 +284,10 @@ public class Etablissement {
 	}
 	
 	public String getSectionStringernationale() {
-		return sectionStringernationale;
+		return sectioninternationale;
 	}
 	public void setSectionStringernationale(String sectionStringernationale) {
-		this.sectionStringernationale = sectionStringernationale;
+		this.sectioninternationale = sectionStringernationale;
 	}
 	
 	public String getSectioneuropeenne() {
