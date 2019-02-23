@@ -51,35 +51,35 @@
 		<table id="tableauEtablissement" class="table table-hover table-bordered" width="100%">
 			<thead >
 				<tr>
-					<th>..</th>
-					<th>ID</th>
-					<th>NOM</th>
-					<th>TYPE</th>
-					<th>STATUT</th>
-					<th>ADRESSE</th>
-					<th>CODE POSTAL</th>
-					<th>VILLE</th>
-					<th>DEPARTEMENT</th>
-					<th>REGION</th>
+					<td>..</td>
+					<td>ID</td>
+					<td>NOM</td>
+					<td>TYPE</td>
+					<td>STATUT</td>
+					<td>ADRESSE</td>
+					<td>CODE POSTAL</td>
+					<td>VILLE</td>
+					<td>DEPARTEMENT</td>
+					<td>REGION</td>
 				</tr>
 			</thead>
 			<tbody id="ligne-tableau" th:each="etablissement, iterStat : ${etablissements}">
 				<tr>
-					<td>
+					<th>
 						<button data-toggle="collapse" th:attr="data-target=|#demo${iterStat.count}|"> +</button> 
-					</td>
-					<td th:text="${etablissement.identifiantdeletablissement}">id</td>
-					<td th:text="${etablissement.nometablissement}">nom</td>
-					<td th:text="${etablissement.typeetablissement}">type</td>
-					<td th:text="${etablissement.statutpublicprive}">statut</td>
-					<td th:text="${etablissement.adresse1}">adresse</td>
-					<td th:text="${etablissement.codepostal}">code postal</td>
-					<td th:text="${etablissement.libelleacademie}">académie</td>
-					<td th:text="${etablissement.libelledepartement}">département</td>	
-					<td th:text="${etablissement.libelleregion}">région</td>			
+					</th>
+					<th th:text="${etablissement.identifiantdeletablissement}">id</th>
+					<th th:text="${etablissement.nometablissement}">nom</th>
+					<th th:text="${etablissement.typeetablissement}">type</th>
+					<th th:text="${etablissement.statutpublicprive}">statut</th>
+					<th th:text="${etablissement.adresse1}">adresse</th>
+					<th th:text="${etablissement.codepostal}">code postal</th>
+					<th th:text="${etablissement.libelleacademie}">académie</th>
+					<th th:text="${etablissement.libelledepartement}">département</th>	
+					<th th:text="${etablissement.libelleregion}">région</th>			
 				</tr> 
 				<tr>
-					<td colspan="6" class="hiddenRow">
+					<th colspan="5" class="hiddenRow">
 						<div class="accordian-bdy collapse" th:id="'demo' + ${iterStat.count}">
 							<p>Identifiant : 
 								<span th:text="${etablissement.identifiantdeletablissement}"></span>
@@ -224,7 +224,16 @@
 								<span th:text="${etablissement.libellenature}"></span>
 							</p>
 						</div>
-					</td>
+					</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th style="display: none"></th>
+					<th style="display: none"></th>
+					<th style="display: none"></th>
+					<th style="display: none"></th>
 				</tr>
 			</tbody>
 		</table>	
