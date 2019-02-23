@@ -18,6 +18,7 @@ var reloadUrlSearch = function() {
 };
 
 var reloadUrlMAJ = function() {
+	console.log("slt");
 	var id = document.getElementById("id").value; 
 	window.location.href = "http://localhost:8080/modifierEtablissement"+id;
 };

@@ -8,10 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	
 	<script type="text/javascript" src="listeJS.js"></script>
 
   	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
@@ -52,37 +49,70 @@
 		<img src="images/search.png" onclick="reloadUrlMAJ()">
 	</div>
 	
-	
-	
-	<div class="table-responsive" id="tableau">
-		<table id="tableauCodePostal" class="table table-hover table-bordered" width="100%">
-			<thead >
-				<tr>
-					<th>ID</th>
-					<th>NOM</th>
-					<th>TYPE</th>
-					<th>STATUT</th>
-					<th>ADRESSE</th>
-					<th>CODE POSTAL</th>
-					<th>VILLE</th>
-					<th>DEPARTEMENT</th>
-					<th>REGION</th>
-				</tr>
-			</thead>
-			<tbody id="ligne-tableau">
-				<tr th:each="etablissement: ${etablissements}">
-					<th th:text="${etablissement.identifiantdeletablissement}">id</th>
-					<th th:text="${etablissement.nometablissement}">nom</th>
-					<th th:text="${etablissement.typeetablissement}">type</th>
-					<th th:text="${etablissement.statutpublicprive}">statut</th>
-					<th th:text="${etablissement.adresse1}">adresse</th>
-					<th th:text="${etablissement.codepostal}">code postal</th>
-					<th th:text="${etablissement.libelleacademie}">académie</th>
-					<th th:text="${etablissement.libelledepartement}">département</th>	
-					<th th:text="${etablissement.libelleregion}">région</th>					
-				</tr> 
-			</tbody>
-		</table>	
+	<div th:each="etablissement: ${etablissements}">
+		<input type="text" th:value="${etablissement.identifiantdeletablissement}"/>
+		<input type="text" th:value="${etablissement.nometablissement}"/>
+		<input type="text" th:value="${etablissement.typeetablissement}"/>
+		<input type="text" th:value="${etablissement.statutpublicprive}"/>
+		<input type="text" th:value="${etablissement.adresse1}"/>
+		<input type="text" th:value="${etablissement.adresse2}"/>
+		<input type="text" th:value="${etablissement.adresse3}"/>
+		<input type="text" th:value="${etablissement.codepostal}"/>
+		<input type="text" th:value="${etablissement.codecommune}"/>
+		<input type="text" th:value="${etablissement.nomcommune}"/>
+		<input type="text" th:value="${etablissement.codedepartement}"/>
+		<input type="text" th:value="${etablissement.codeacademie}"/>
+		<input type="text" th:value="${etablissement.coderegion}"/>
+		<input type="text" th:value="${etablissement.ecolematernelle}"/>
+		<input type="text" th:value="${etablissement.ecoleelementaire}"/>
+		<input type="text" th:value="${etablissement.voiegenerale}"/>
+		<input type="text" th:value="${etablissement.voietechnologique}"/>
+		<input type="text" th:value="${etablissement.voieprofessionnelle}"/>
+		<input type="text" th:value="${etablissement.telephone}"/>
+		<input type="text" th:value="${etablissement.fax}"/>
+		<input type="text" th:value="${etablissement.web}"/>
+		<input type="text" th:value="${etablissement.mail}"/>
+		<input type="text" th:value="${etablissement.restauration}"/>
+		<input type="text" th:value="${etablissement.hebergement}"/>
+		<input type="text" th:value="${etablissement.ulis}"/>
+		<input type="text" th:value="${etablissement.apprentissage}"/>
+		<input type="text" th:value="${etablissement.segpa}"/>
+		<input type="text" th:value="${etablissement.sectionarts}"/>
+		<input type="text" th:value="${etablissement.sectioncinema}"/>
+		<input type="text" th:value="${etablissement.sectiontheatre}"/>
+		<input type="text" th:value="${etablissement.sectionsport}"/>
+		<input type="text" th:value="${etablissement.sectioninternationale}"/>
+		<input type="text" th:value="${etablissement.sectioneuropeenne}"/>
+		<input type="text" th:value="${etablissement.lyceeAgricole}"/>
+		<input type="text" th:value="${etablissement.lyceemilitaire}"/>
+		<input type="text" th:value="${etablissement.lyceedesmetiers}"/>
+		<input type="text" th:value="${etablissement.postBAC}"/>
+		<input type="text" th:value="${etablissement.appartenanceEducationPrioritaire}"/>
+		<input type="text" th:value="${etablissement.greta}"/>
+		<input type="text" th:value="${etablissement.sirenSIRET}"/>
+		<input type="text" th:value="${etablissement.nombredeleves}"/>
+		<input type="text" th:value="${etablissement.ficheonisep}"/>
+		<input type="text" th:value="${etablissement.typecontratprive}"/>
+		<input type="text" th:value="${etablissement.libelledepartement}"/>
+		<input type="text" th:value="${etablissement.libelleacademie}"/>
+		<input type="text" th:value="${etablissement.libelleregion}"/>
+		<input type="text" th:value="${etablissement.coordonneeX}"/>
+		<input type="text" th:value="${etablissement.coordonneeY}"/>
+		<input type="text" th:value="${etablissement.epsg}"/>
+		<input type="text" th:value="${etablissement.nomcirconscription}"/>
+		<input type="text" th:value="${etablissement.latitude}"/>
+		<input type="text" th:value="${etablissement.longitude}"/>
+		<input type="text" th:value="${etablissement.precisionlocalisation}"/>
+		<input type="text" th:value="${etablissement.dateouverture}"/>
+		<input type="text" th:value="${etablissement.datemajligne}"/>
+		<input type="text" th:value="${etablissement.etat}"/>
+		<input type="text" th:value="${etablissement.ministeretutelle}"/>
+		<input type="text" th:value="${etablissement.etablissementmultilignes}"/>
+		<input type="text" th:value="${etablissement.rpiconcentre}"/>
+		<input type="text" th:value="${etablissement.rpidisperse}"/>
+		<input type="text" th:value="${etablissement.codenature}"/>
+		<input type="text" th:value="${etablissement.libellenature}"/>
 	</div>
+	
 </body>
 </html>

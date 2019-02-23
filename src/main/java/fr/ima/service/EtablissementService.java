@@ -10,5 +10,5 @@ public interface EtablissementService {
 
 	public List<Etablissement> findByCodePostal(String code_postal);
 
-	public Etablissement findByID(String id);
+	public List<Etablissement> findByID(String id);
 }

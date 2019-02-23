@@ -283,10 +283,10 @@ public class Etablissement {
 		this.sectionsport = sectionsport;
 	}
 	
-	public String getSectionStringernationale() {
+	public String getSectioninternationale() {
 		return sectioninternationale;
 	}
-	public void setSectionStringernationale(String sectionStringernationale) {
+	public void setSectioninternationale(String sectionStringernationale) {
 		this.sectioninternationale = sectionStringernationale;
 	}
 	
