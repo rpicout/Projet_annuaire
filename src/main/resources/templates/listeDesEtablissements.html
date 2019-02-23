@@ -51,6 +51,7 @@
 		<table id="tableauEtablissement" class="table table-hover table-bordered" width="100%">
 			<thead >
 				<tr>
+					<th>..</th>
 					<th>ID</th>
 					<th>NOM</th>
 					<th>TYPE</th>
@@ -62,18 +63,88 @@
 					<th>REGION</th>
 				</tr>
 			</thead>
-			<tbody id="ligne-tableau">
-				<tr th:each="etablissement: ${etablissements}">
-					<th th:text="${etablissement.identifiantdeletablissement}">id</th>
-					<th th:text="${etablissement.nometablissement}">nom</th>
-					<th th:text="${etablissement.typeetablissement}">type</th>
-					<th th:text="${etablissement.statutpublicprive}">statut</th>
-					<th th:text="${etablissement.adresse1}">adresse</th>
-					<th th:text="${etablissement.codepostal}">code postal</th>
-					<th th:text="${etablissement.libelleacademie}">académie</th>
-					<th th:text="${etablissement.libelledepartement}">département</th>	
-					<th th:text="${etablissement.libelleregion}">région</th>					
+			<tbody id="ligne-tableau" th:each="etablissement, iterStat : ${etablissements}">
+				<tr>
+					<td>
+						<button data-toggle="collapse" th:attr="data-target=|#demo${iterStat.count}|"> +</button> 
+					</td>
+					<td th:text="${etablissement.identifiantdeletablissement}">id</td>
+					<td th:text="${etablissement.nometablissement}">nom</td>
+					<td th:text="${etablissement.typeetablissement}">type</td>
+					<td th:text="${etablissement.statutpublicprive}">statut</td>
+					<td th:text="${etablissement.adresse1}">adresse</td>
+					<td th:text="${etablissement.codepostal}">code postal</td>
+					<td th:text="${etablissement.libelleacademie}">académie</td>
+					<td th:text="${etablissement.libelledepartement}">département</td>	
+					<td th:text="${etablissement.libelleregion}">région</td>			
 				</tr> 
+				<tr>
+					<td colspan="6" class="hiddenRow">
+						<div class="accordian-bdy collapse" th:id="'demo' + ${iterStat.count}">
+							<p>Identifiant : <span th:text="${etablissement.identifiantdeletablissement}"></span></p>
+							<p>Nom : <span th:text="${etablissement.nometablissement}"></span></p>
+							<p>Type : <span th:text="${etablissement.typeetablissement}"></span></p>
+							<p>Statut : <span th:text="${etablissement.statutpublicprive}"></span></p>
+							<p>Adresse1 : <span th:text="${etablissement.adresse1}"></span></p>
+							<p>Adresse2 : <span th:text="${etablissement.adresse2}"></span></p>
+							<p>Adresse3 : <span th:text="${etablissement.adresse3}"></span></p>
+							<p>Code postal : <span th:text="${etablissement.codepostal}"></span></p>
+							<p>Code commune : <span th:text="${etablissement.codecommune}"></span></p>
+							<p>Nom commune : <span th:text="${etablissement.nomcommune}"></span></p>
+							<p>Code département : <span th:text="${etablissement.codedepartement}"></span></p>
+							<p>Libellé département : <span th:text="${etablissement.libelledepartement}"></span></p>
+							<p>Code région : <span th:text="${etablissement.coderegion}"></span></p>
+							<p>Libellé région : <span th:text="${etablissement.libelleregion}"></span></p>
+							<p>Code académie : <span th:text="${etablissement.codeacademie}"></span></p>
+							<p>Libellé académie : <span th:text="${etablissement.libelleacademie}"></span></p>
+							<p>Ecole maternelle : <span th:text="${etablissement.ecolematernelle}"></span></p>
+							<p>Ecole élémentaire : <span th:text="${etablissement.ecoleelementaire}"></span></p>
+							<p>Voie générale : <span th:text="${etablissement.voiegenerale}"></span></p>
+							<p>Voie technologique : <span th:text="${etablissement.voietechnologique}"></span></p>
+							<p>Voie professionnelle : <span th:text="${etablissement.voieprofessionnelle}"></span></p>
+							<p>Téléphone : <span th:text="${etablissement.telephone}"></span></p>
+							<p>Fax : <span th:text="${etablissement.fax}"></span></p>
+							<p>Web : <span th:text="${etablissement.web}"></span></p>
+							<p>Mail : <span th:text="${etablissement.mail}"></span></p>
+							<p>Restauration : <span th:text="${etablissement.restauration}"></span></p>
+							<p>Hébergement : <span th:text="${etablissement.hebergement}"></span></p>
+							<p>ULIS : <span th:text="${etablissement.ulis}"></span></p>
+							<p>Apprentissage : <span th:text="${etablissement.apprentissage}"></span></p>
+							<p>SEGPA : <span th:text="${etablissement.segpa}"></span></p>
+							<p>Section arts : <span th:text="${etablissement.sectionarts}"></span></p>
+							<p>Section cinema : <span th:text="${etablissement.sectioncinema}"></span></p>
+							<p>Section théatre : <span th:text="${etablissement.sectiontheatre}"></span></p>
+							<p>Section sport : <span th:text="${etablissement.sectionsport}"></span></p>
+							<p>Section internationale : <span th:text="${etablissement.sectioninternationale}"></span></p>
+							<p>Section européenne : <span th:text="${etablissement.sectioneuropeenne}"></span></p>
+							<p>Lycée agricole : <span th:text="${etablissement.lyceeAgricole}"></span></p>
+							<p>Lycée militaire : <span th:text="${etablissement.lyceemilitaire}"></span></p>
+							<p>Lycée des métiers : <span th:text="${etablissement.lyceedesmetiers}"></span></p>
+							<p>Post BAC : <span th:text="${etablissement.postBAC}"></span></p>
+							<p>Appartenance éducation prioritaire : <span th:text="${etablissement.appartenanceEducationPrioritaire}"></span></p>
+							<p>GRETA : <span th:text="${etablissement.greta}"></span></p>
+							<p>Siren SIRET : <span th:text="${etablissement.sirenSIRET}"></span></p>
+							<p>Nombre d'élèves : <span th:text="${etablissement.nombredeleves}"></span></p>
+							<p>Fiche ONISEP : <span th:text="${etablissement.ficheonisep}"></span></p>
+							<p>Type contrat privé : <span th:text="${etablissement.typecontratprive}"></span></p>
+							<p>Coordonnées : (<span th:text="${etablissement.coordonneeX}"></span>; <span th:text="${etablissement.coordonneeY}"></span>)</p>
+							<p>EPSG : <span th:text="${etablissement.epsg}"></span></p>
+							<p>Nom circonscription : <span th:text="${etablissement.nomcirconscription}"></span></p>
+							<p>Latitude : <span th:text="${etablissement.latitude}"></span></p>
+							<p>Longitude : <span th:text="${etablissement.longitude}"></span></p>
+							<p>Précision localisation : <span th:text="${etablissement.precisionlocalisation}"></span></p>
+							<p>Date ouverture : <span th:text="${etablissement.dateouverture}"></span></p>
+							<p>Date maj ligne : <span th:text="${etablissement.datemajligne}"></span></p>
+							<p>Etat : <span th:text="${etablissement.etat}"></span></p>
+							<p>Ministère tutelle : <span th:text="${etablissement.ministeretutelle}"></span></p>
+							<p>Etablissement multilignes : <span th:text="${etablissement.etablissementmultilignes}"></span></p>
+							<p>Rpi concentré : <span th:text="${etablissement.rpiconcentre}"></span></p>
+							<p>Rpi dispersé : <span th:text="${etablissement.rpidisperse}"></span></p>
+							<p>Code nature : <span th:text="${etablissement.codenature}"></span></p>
+							<p>Libellé nature : <span th:text="${etablissement.libellenature}"></span></p>
+						</div>
+					</td>
+				</tr>
 			</tbody>
 		</table>	
 	</div>
