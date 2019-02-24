@@ -8,7 +8,9 @@ public interface EtablissementService {
 	
 	public List<Etablissement> lister();
 
-	public List<Etablissement> findByCodePostal(String code_postal);
+	public List<Etablissement> findByCodePostal(String codePostal);
 
 	public List<Etablissement> findByID(String id);
+	
+	public void postEtablissement(Etablissement etablissement);
 }

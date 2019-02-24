@@ -45,6 +45,14 @@ public class EtablissementServiceImpl implements EtablissementService {
 		
 		return etablissements;
 	}
+
+	@Override
+	public void postEtablissement(Etablissement etablissement) {
+		String url = "http://localhost:8081/etablissements/update/"+etablissement;
+		
+		//Etablissement e = restTemplate.exchange;
+		
+	}
 	
 	
 
