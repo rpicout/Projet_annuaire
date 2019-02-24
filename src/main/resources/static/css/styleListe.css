@@ -60,3 +60,12 @@ body{
 #ligne-tableau tr:hover {
 	background-color: #EAEAEA;
 }
+
+
+.nonAfficher {
+	display: none;
+}
+.afficher {
+	display: table-row;
+	font-size: 12px;
+}
