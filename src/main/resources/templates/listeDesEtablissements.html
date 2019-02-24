@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="listeJS.js"></script>
+	<script type="text/javascript" src="script/listeJS.js"></script>
 	
 	<script>
 		var afficherFiche = function(id) {
@@ -101,9 +101,9 @@
 					<th th:text="${etablissement.codepostal}">code postal</th>
 					<th th:text="${etablissement.libelleacademie}">académie</th>
 					<th th:text="${etablissement.libelledepartement}">département</th>	
-					<th th:text="${etablissement.libelleregion}">région</th>			
-				</tr> 
-				<tr th:id="'#accordion_'+${etablissement.identifiantdeletablissement}" class="nonAfficher fiche">
+					<th th:text="${etablissement.libelleregion}">région</th>	
+					</tr>
+					<tr th:id="'#accordion_'+${etablissement.identifiantdeletablissement}" class="nonAfficher fiche">
 					<th colspan="5">
 						<p>Identifiant : 
 							<span th:text="${etablissement.identifiantdeletablissement}"></span>
@@ -257,7 +257,7 @@
 					<th style="display: none"></th>
 					<th style="display: none"></th>
 					<th style="display: none"></th>
-				</tr>
+				</tr> 
 			</tbody>
 		</table>	
 	</div>

@@ -9,9 +9,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	
-	<script type="text/javascript" src="listeJS.js"></script>
-
-  	<link rel="stylesheet" href="css/styleListe.css" type="text/css" >
+  	<link rel="stylesheet" href="css/form.css" type="text/css">
+	<script type="text/javascript" src="script/formJS.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -44,74 +43,221 @@
 		<h2>Modifier la fiche d'un établissement</h2>
 	</div>
 	
-	<div>
+	<div id="search">
 		<input type="text" placeholder="Identifiant de l'établissement" id="id">
 		<img src="images/search.png" onclick="reloadUrlMAJ()">
 	</div>
 	
 	<div th:each="etablissement: ${etablissements}">
-		<input type="text" th:value="${etablissement.identifiantdeletablissement}"/>
-		<input type="text" th:value="${etablissement.nometablissement}"/>
-		<input type="text" th:value="${etablissement.typeetablissement}"/>
-		<input type="text" th:value="${etablissement.statutpublicprive}"/>
-		<input type="text" th:value="${etablissement.adresse1}"/>
-		<input type="text" th:value="${etablissement.adresse2}"/>
-		<input type="text" th:value="${etablissement.adresse3}"/>
-		<input type="text" th:value="${etablissement.codepostal}"/>
-		<input type="text" th:value="${etablissement.codecommune}"/>
-		<input type="text" th:value="${etablissement.nomcommune}"/>
-		<input type="text" th:value="${etablissement.codedepartement}"/>
-		<input type="text" th:value="${etablissement.codeacademie}"/>
-		<input type="text" th:value="${etablissement.coderegion}"/>
-		<input type="text" th:value="${etablissement.ecolematernelle}"/>
-		<input type="text" th:value="${etablissement.ecoleelementaire}"/>
-		<input type="text" th:value="${etablissement.voiegenerale}"/>
-		<input type="text" th:value="${etablissement.voietechnologique}"/>
-		<input type="text" th:value="${etablissement.voieprofessionnelle}"/>
-		<input type="text" th:value="${etablissement.telephone}"/>
-		<input type="text" th:value="${etablissement.fax}"/>
-		<input type="text" th:value="${etablissement.web}"/>
-		<input type="text" th:value="${etablissement.mail}"/>
-		<input type="text" th:value="${etablissement.restauration}"/>
-		<input type="text" th:value="${etablissement.hebergement}"/>
-		<input type="text" th:value="${etablissement.ulis}"/>
-		<input type="text" th:value="${etablissement.apprentissage}"/>
-		<input type="text" th:value="${etablissement.segpa}"/>
-		<input type="text" th:value="${etablissement.sectionarts}"/>
-		<input type="text" th:value="${etablissement.sectioncinema}"/>
-		<input type="text" th:value="${etablissement.sectiontheatre}"/>
-		<input type="text" th:value="${etablissement.sectionsport}"/>
-		<input type="text" th:value="${etablissement.sectioninternationale}"/>
-		<input type="text" th:value="${etablissement.sectioneuropeenne}"/>
-		<input type="text" th:value="${etablissement.lyceeAgricole}"/>
-		<input type="text" th:value="${etablissement.lyceemilitaire}"/>
-		<input type="text" th:value="${etablissement.lyceedesmetiers}"/>
-		<input type="text" th:value="${etablissement.postBAC}"/>
-		<input type="text" th:value="${etablissement.appartenanceEducationPrioritaire}"/>
-		<input type="text" th:value="${etablissement.greta}"/>
-		<input type="text" th:value="${etablissement.sirenSIRET}"/>
-		<input type="text" th:value="${etablissement.nombredeleves}"/>
-		<input type="text" th:value="${etablissement.ficheonisep}"/>
-		<input type="text" th:value="${etablissement.typecontratprive}"/>
-		<input type="text" th:value="${etablissement.libelledepartement}"/>
-		<input type="text" th:value="${etablissement.libelleacademie}"/>
-		<input type="text" th:value="${etablissement.libelleregion}"/>
-		<input type="text" th:value="${etablissement.coordonneeX}"/>
-		<input type="text" th:value="${etablissement.coordonneeY}"/>
-		<input type="text" th:value="${etablissement.epsg}"/>
-		<input type="text" th:value="${etablissement.nomcirconscription}"/>
-		<input type="text" th:value="${etablissement.latitude}"/>
-		<input type="text" th:value="${etablissement.longitude}"/>
-		<input type="text" th:value="${etablissement.precisionlocalisation}"/>
-		<input type="text" th:value="${etablissement.dateouverture}"/>
-		<input type="text" th:value="${etablissement.datemajligne}"/>
-		<input type="text" th:value="${etablissement.etat}"/>
-		<input type="text" th:value="${etablissement.ministeretutelle}"/>
-		<input type="text" th:value="${etablissement.etablissementmultilignes}"/>
-		<input type="text" th:value="${etablissement.rpiconcentre}"/>
-		<input type="text" th:value="${etablissement.rpidisperse}"/>
-		<input type="text" th:value="${etablissement.codenature}"/>
-		<input type="text" th:value="${etablissement.libellenature}"/>
+		<form action="#" th:action="@{/postEtablissement}" th:object="${etablissement}" method="post">
+			<table>
+				<tr>
+					<td><h4>INFORMATIONS</h4></td>
+				</tr>
+				<tr>
+					<td>Identifiant : </td>
+					<td><input type="text" id="id2" placeholder="Identifiant" th:value="*{identifiantdeletablissement}"/></td>
+				</tr>
+				<tr>
+					<td>Nom : </td>
+					<td><input type="text" id="nom" placeholder="Nom" th:value="*{nometablissement}"/></td>
+				</tr>
+				<tr>
+					<td>Téléphone : </td>
+					<td><input type="text" id="tel" placeholder="Téléphone" th:value="*{telephone}"/></td>
+				</tr>
+				<tr>
+					<td>FAX : </td>
+					<td><input type="text" id="fax" placeholder="Fax" th:value="*{fax}"/></td>
+				</tr>
+				<tr>
+					<td>WEB : </td>
+					<td><input type="text" id="web" placeholder="Web" th:value="*{web}"/></td>
+				</tr>
+				<tr>
+					<td>Mail : </td>
+					<td><input type="text" id="mail" placeholder="Mail" th:value="*{mail}"/></td>
+				</tr>
+				<tr>
+					<td>Type : </td>
+					<td><input type="text" id="type" placeholder="Type" th:value="*{typeetablissement}"/></td>
+				</tr>
+				<tr>
+					<td>Statut : </td>
+					<td><input type="text" id="statut" placeholder="Statut public / privé" th:value="*{statutpublicprive}"/></td>
+				</tr>
+				<tr>
+					<td>Code / Libellé académie : </td>
+					<td><input type="text" id="cacademie" placeholder="Code" th:value="*{codeacademie}"/></td>
+					<td><input type="text" id="lacademie" placeholder="Libellé" th:value="*{libelleacademie}"/></td>
+				</tr>
+				<tr>
+					<td>Fiche onisep : </td>
+					<td><input type="text" id="onisep" placeholder="Fiche onisep" th:value="*{ficheonisep}"/></td>
+				</tr>
+				<tr>
+					<td>Siren SIRET : </td>
+					<td><input type="text" id="siret" placeholder="Siren SIRET" th:value="*{sirenSIRET}"/></td>
+				</tr>
+				
+				<tr>
+					<td><h4>LOCALISATION</h4></td>
+				</tr>
+				<tr>
+					<td>Adresse : </td>
+					<td><input type="text" id="adr1" placeholder="Adresse 1" th:value="*{adresse1}"/></td>
+					<td><input type="text" id="adr2" placeholder="Adresse 2" th:value="*{adresse2}"/></td>
+					<td><input type="text" id="adr3" placeholder="Adresse 3" th:value="*{adresse3}"/></td>
+				</tr>
+				<tr>
+					<td>Code postal : </td>
+					<td><input type="text" id="cp" placeholder="Code postal" th:value="*{codepostal}"/></td>
+				</tr>
+				<tr>
+					<td>Code / Nom commune : </td>
+					<td><input type="text" id="ccommune" placeholder="Code commune" th:value="*{codecommune}"/></td>
+					<td><input type="text" id="ncommune" placeholder="Nom commune" th:value="*{nomcommune}"/></td>
+				</tr>
+				<tr>
+					<td>Code / Libellé département : </td>
+					<td><input type="text" id="cdep" placeholder="Code département" th:value="*{codedepartement}"/></td>
+					<td><input type="text" id="ldep" placeholder="Libellé département" th:value="*{libelledepartement}"/></td>
+				</tr>
+				<tr>
+					<td>Code / Libellé région : </td>
+					<td><input type="text" id="cregion" placeholder="Code région" th:value="*{coderegion}"/></td>
+					<td><input type="text" id="lregion" placeholder="Libellé région" th:value="*{libelleregion}"/></td>
+				</tr>
+				<tr>
+					<td>Coordonnées X - Y : </td>
+					<td><input type="text" id="x" placeholder="X" th:value="*{coordonneeX}"/></td>
+					<td><input type="text" id="y" placeholder="Y" th:value="*{coordonneeY}"/></td>
+				</tr>
+				<tr>
+					<td>Latitude : </td>
+					<td><input type="text" id="latitude" placeholder="Latitude" th:value="*{latitude}"/></td>
+					<td>Longitude : </td>
+					<td><input type="text" id="longitude" placeholder="Longitude" th:value="*{longitude}"/></td>
+				</tr>
+				<tr>
+					<td>Précision localisation : </td>
+					<td><input type="text" id="precision" placeholder="Précision localisation" th:value="*{precisionlocalisation}"/></td>
+				</tr>
+				<tr>
+					<td>EPSG : </td>
+					<td><input type="text" id="epsg" placeholder="EPSG" th:value="*{epsg}"/></td>
+				</tr>
+			
+				<tr>
+					<td><h4>TYPE D'ECOLE<span> (0/1)</span></h4></td>
+				</tr>
+				<tr>
+					<td>Maternelle / Elémentaire : </td>
+					<td><input type="text" id="maternelle" placeholder="Maternelle" th:value="*{ecolematernelle}"/></td>
+					<td><input type="text" id="elementaire" placeholder="Elémentaire" th:value="*{ecoleelementaire}"/></td>
+				</tr>
+				<tr>
+					<td>Générale / Technologique / Professionnelle : </td>
+					<td><input type="text" id="generale" placeholder="Générale" th:value="*{voiegenerale}"/></td>
+					<td><input type="text" id="technologique" placeholder="Technologique" th:value="*{voietechnologique}"/></td>
+					<td><input type="text" id="professionnelle" placeholder="Professionnelle" th:value="*{voieprofessionnelle}"/></td>
+				</tr>
+				<tr>
+					<td>Restauration : </td>
+					<td><input type="text" id="resto" placeholder="Restauration" th:value="*{restauration}"/></td>
+				</tr>
+				<tr>
+					<td>Hébergement : </td>
+					<td><input type="text" id="hebergement" placeholder="Hébergement" th:value="*{hebergement}"/></td>
+				</tr>
+				<tr>
+					<td>ULIS : </td>
+					<td><input type="text" id="ulis" placeholder="ULIS" th:value="*{ulis}"/></td>
+				</tr>
+				<tr>
+					<td>Apprentissage : </td>
+					<td><input type="text" id="apprentissage" placeholder="Apprentissage" th:value="*{apprentissage}"/></td>
+				</tr>
+				<tr>
+					<td>SEGPA : </td>
+					<td><input type="text" id="segpa" placeholder="SEGPA" th:value="*{segpa}"/></td>
+				</tr>
+				<tr>
+					<td>Arts / Cinéma / Théâtre / Sport / Internationale / Européenne : </td>
+					<td><input type="text" id="arts" placeholder="Arts" th:value="*{sectionarts}"/></td>
+					<td><input type="text" id="cinema" placeholder="Cinema" th:value="*{sectioncinema}"/></td>
+					<td><input type="text" id="theatre" placeholder="Théâtre" th:value="*{sectiontheatre}"/></td>
+					<td><input type="text" id="sport" placeholder="Sport" th:value="*{sectionsport}"/></td>
+					<td><input type="text" id="internationale" placeholder="Internationale" th:value="*{sectioninternationale}"/></td>
+					<td><input type="text" id="europeenne" placeholder="Européenne" th:value="*{sectioneuropeenne}"/></td>
+				</tr>
+				<tr>
+					<td>Lycée agricole / militaire / des métiers : </td>
+					<td><input type="text" id="agricole" placeholder="Agricole" th:value="*{lyceeAgricole}"/></td>
+					<td><input type="text" id="militaire" placeholder="Militaire" th:value="*{lyceemilitaire}"/></td>
+					<td><input type="text" id="metiers" placeholder="Des métiers" th:value="*{lyceedesmetiers}"/></td>
+				</tr>
+				
+				<tr>
+					<td><h4>AUTRES</h4></td>
+				</tr>
+				<tr>
+					<td>Post BAC :</td>
+					<td><input type="text" id="postBAC" placeholder="Post BAC" th:value="*{postBAC}"/></td>
+				</tr>
+				<tr>
+					<td>Appartenance éducation prioritaire</td>
+					<td><input type="text" id="aep" placeholder="Appartenance éducation prioritaire" th:value="*{appartenanceEducationPrioritaire}"/></td>
+				</tr>
+				<tr>
+					<td>GRETA : </td>
+					<td><input type="text" id="greta" placeholder="GRETA" th:value="*{greta}"/></td>
+				</tr>
+				<tr>
+					<td>Nombre d'élèves : </td>
+					<td><input type="text" id="nbEleves" placeholder="Nombre d'élèves" th:value="*{nombredeleves}"/></td>
+				</tr>
+				<tr>
+					<td>Type de contrat : </td>
+					<td><input type="text" id="typeContrat" placeholder="Type de contrat" th:value="*{typecontratprive}"/></td>
+				</tr>
+				<tr>
+					<td>Nom circonscription : </td>
+					<td><input type="text" id="circonscription" placeholder="Nom circonscription" th:value="*{nomcirconscription}"/></td>
+				</tr>
+				<tr>
+					<td>Date ouverture : </td>
+					<td><input type="text" id="dateOuvert" placeholder="Date ouverture" th:value="*{dateouverture}"/></td>
+				</tr>
+				<tr>
+					<td>Date mise à jour : </td>
+					<td><input type="text" id="dateMAJ" placeholder="Date mise à jour" th:value="*{datemajligne}"/></td>
+				</tr>
+				<tr>
+					<td>Etat : </td>
+					<td><input type="text" id="etat" placeholder="Etat" th:value="*{etat}"/></td>
+				</tr>
+				<tr>
+					<td>Ministère tutelle : </td>
+					<td><input type="text" id="ministere" placeholder="Ministère tutelle" th:value="*{ministeretutelle}"/></td>
+				</tr>
+				<tr>
+					<td>Etablissement multilignes : </td>
+					<td><input type="text" id="multilignes" placeholder="Etablissement multilignes" th:value="*{etablissementmultilignes}"/></td>
+				</tr>
+				<tr>
+					<td>RPI concentré / dispersé : </td>
+					<td><input type="text" id="rpic" placeholder="RPI concentré" th:value="*{rpiconcentre}"/></td>
+					<td><input type="text" id="rpid" placeholder="RPI dispersé" th:value="*{rpidisperse}"/></td>
+				</tr>
+				<tr>
+					<td>Code / Libellé nature : </td>
+					<td><input type="text" id="cnature" placeholder="Code nature" th:value="*{codenature}"/></td>
+					<td><input type="text" id="lnature" placeholder="Libellé nature" th:value="*{libellenature}"/></td>
+				</tr>
+			</table>
+			<input type="submit" />
+		</form>
 	</div>
 	
 </body>
