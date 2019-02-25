@@ -48,10 +48,10 @@ public class EtablissementServiceImpl implements EtablissementService {
 
 	@Override
 	public void postEtablissement(Etablissement etablissement) {
-		String url = "http://localhost:8081/etablissements/update/"+etablissement;
+		String url = "http://localhost:8081/etablissements/update/"+etablissement.getIdentifiantdeletablissement();
+		System.out.println(url);
 		
-		//Etablissement e = restTemplate.exchange;
-		
+		restTemplate.postForObject(url, etablissement, Etablissement.class);
 	}
 	
 	

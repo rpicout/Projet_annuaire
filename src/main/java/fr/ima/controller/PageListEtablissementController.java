@@ -1,5 +1,7 @@
 package fr.ima.controller;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import fr.ima.service.EtablissementService;
 
 @Controller
 public class PageListEtablissementController {
+	Logger logger = Logger.getLogger(PageListEtablissementController.class.getName());
 	
 	@Autowired
 	private EtablissementService dao;
@@ -39,6 +42,8 @@ public class PageListEtablissementController {
 
     @RequestMapping(value = "/postEtablissement", method=RequestMethod.POST)
     public String processForm(@ModelAttribute(value="etablissement") Etablissement etablissement) {
+    	System.out.println("Etablissement : "  +etablissement);
+    	System.out.println(etablissement.getTelephone());
     	dao.postEtablissement(etablissement);
     	return "modifierEtablissement";
     }
